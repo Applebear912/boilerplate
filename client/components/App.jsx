@@ -1,10 +1,9 @@
-
 // create class conpoment
 // goals: 1. fetch photo of the day from nasa api, and display it on our page (done)
 // 2. create an option of saving the photo to database if the client want to do so
 
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 // console.log(API_KEY);
 class App extends React.Component {
@@ -13,12 +12,12 @@ class App extends React.Component {
 
     this.state = {
       // - what to display: image, title, explaination, date and what's their datatype
-      image: '', // url
-      title: '',
-      explanation: '',
-      date: '',
+      image: "", // url
+      title: "",
+      explanation: "",
+      date: "",
     };
-  };
+  }
 
   componentDidMount() {
     // setting state
@@ -27,9 +26,11 @@ class App extends React.Component {
   }
 
   getPhoto() {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=OCNM6w9b9xwzEP0NLyAhNmv6zhDen0RUUtYdWEE7')
-      .then(response => {
-
+    axios
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=OCNM6w9b9xwzEP0NLyAhNmv6zhDen0RUUtYdWEE7"
+      )
+      .then((response) => {
         console.log(response.data);
         this.setState({
           image: response.data.url,
@@ -39,16 +40,17 @@ class App extends React.Component {
         });
       })
       .catch(console.error);
-  };
+  }
 
   savePhoto() {
     const { image, title, explanation, date } = this.state;
-    axios.post('/photo', { image, title, explanation, date })
-      .then(result => {
-        console.log('Result of POST:', result.data);
+    axios
+      .post("/photo", { image, title, explanation, date })
+      .then((result) => {
+        console.log("Result of POST:", result.data);
       })
       .catch(console.error);
-  };
+  }
 
   render() {
     return (
@@ -67,8 +69,7 @@ class App extends React.Component {
         />
       </main>
     );
-  };
-};
+  }
+}
 
 export default App;
-

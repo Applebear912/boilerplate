@@ -1,5 +1,5 @@
 {
-  "name": "reacting-to-tasks",
+  "name": "take_home_assignment_notable",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "Tom Chandler",
+  "author": "Pingping Xiao",
   "license": "ISC",
   "bugs": {
     "url": "http://www.github.com"
@@ -21,6 +21,7 @@
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "express": "^4.17.0",
+    "gatsby": "^4.2.0",
     "mysql": "^2.18.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
